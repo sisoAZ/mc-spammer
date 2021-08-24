@@ -1,0 +1,8 @@
+.joined-players {
+    font-size: large;
+}
+
+textarea#log {
+    background-color: #15202B !important;
+    color: white !important;
+}

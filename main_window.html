@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Happy</title>
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'unsafe-inline' 'self';default-src 'self'; style-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./main_window.css">
+
+</head>
+
+<body>
+    <textarea name="log" id="log" cols="0" rows="10" class="form-control"></textarea>
+    <button class="btn btn-outline-primary btn" type="button" id="start-login">Login</button>
+    <button class="btn btn-outline-primary btn" type="button" id="start-spam">Start spam</button>
+    <button class="btn btn-outline-primary btn" type="button" id="stop-spam">Stop spam</button>
+    <button class="btn btn-outline-primary btn" type="button" id="stop">Stop bot</button>
+    <span class="joined-players">Joined bots: <span id="joined-players"></span></span>
+    <div class="input-spam-textarea">
+        <textarea name="spam-text" id="spam-text" cols="0" rows="5" class="form-control"
+            placeholder="Enter spam text here"></textarea>
+    </div>
+    <div>
+        <label for="spam-delay" class="form-label">Spam delay <span id="range-input-live-spam"></span>ms</label>
+        <input type="range" class="form-range" value="2000" min="0" max="10000" step="100" id="spam-delay">
+        <script>
+            document.getElementById("range-input-live-spam").innerText = "2000"
+            document.getElementById("spam-delay").addEventListener("input", function (event) {
+                document.getElementById("range-input-live-spam").innerText = event.target.value.toString()
+            })
+        </script>
+    </div>
+    <div>
+        <label for="spam-player-delay" class="form-label">Spam player delay <span
+                id="range-input-live-spam-player"></span>ms</label>
+        <input type="range" class="form-range" value="500" min="0" max="10000" step="100" id="spam-player-delay">
+        <script>
+            document.getElementById("range-input-live-spam-player").innerText = "500"
+            document.getElementById("spam-player-delay").addEventListener("input", function (event) {
+                document.getElementById("range-input-live-spam-player").innerText = event.target.value.toString()
+            })
+        </script>
+    </div>
+    <button class="btn btn-outline-primary btn-sm" type="button" id="open-settings">Settings</button>
+    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

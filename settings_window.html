@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>いやになるねー</title>
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'unsafe-inline' 'self';default-src 'self'; style-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+
+<html>
+
+<body>
+    <div class="input-host">
+        <label for="host">Target Host</label>
+        <input type="text" class="form-control" id="host" placeholder="mc.example.net" value="">
+    </div>
+    <div class="input-port">
+        <label for="port">Port</label>
+        <input type="text" class="form-control" id="port" value="25565" placeholder="25565">
+    </div>
+
+    <div>
+        Account type
+        <select class="form-select" aria-label="Default select example" id="account_type">
+            <option selected value="mojang">Mojang</option>
+            <option value="altening">Altening</option>
+        </select>
+    </div>
+
+    <div class="accounts">
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="load_accounts">Mail:Pass</label>
+            <input type="file" class="form-control" id="load_accounts">
+        </div>
+
+        OR
+
+        <div class="account-text">
+            <textarea name="read-account-textarea" id="read-account-textarea" cols="0" rows="5" class="form-control"
+                placeholder="Paste Combos or Altening keys here"></textarea>
+        </div>
+    </div>
+    
+    <!--
+
+        <div class="proxy-mode">
+            Proxy
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="proxy-on">
+            <label class="form-check-label" for="flexRadioDefault1">
+                ON
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="proxy-off" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                OFF
+            </label>
+        </div>
+    </div>
+
+    <div class="proxies-text">
+        <textarea name="read-account-textarea" id="read-proxies-textarea" cols="0" rows="10" class="form-control"
+        placeholder="Paste proxies"></textarea>
+    </div>
+    
+    -->
+    
+    <div>
+        <label for="join-delay" class="form-label">Join delay <span id="range-input-live-join"></span>ms</label>
+        <input type="range" class="form-range" value="5000" min="0" max="10000" step="100" id="join-delay">
+        <script>
+            document.getElementById("range-input-live-join").innerText = "5000"
+            document.getElementById("join-delay").addEventListener("input", function (event) {
+                document.getElementById("range-input-live-join").innerText = event.target.value.toString()
+            })
+        </script>
+    </div>
+
+    <button class="btn btn-outline-primary btn-sm" type="button" id="settings_confirm">Confirm</button>
+
+    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
